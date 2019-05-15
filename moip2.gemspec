@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "httparty"
+  spec.add_dependency "httparty", "0.13.7"
   spec.add_dependency "recursive-open-struct"
 
   spec.add_development_dependency "bundler"
@@ -43,5 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "codeclimate-test-reporter"
-  spec.add_development_dependency "rubocop", "0.49.1"
+  spec.add_development_dependency "rubocop", "0.41.2"
 end

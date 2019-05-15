@@ -1,3 +1,4 @@
+#encoding: utf-8
 describe Moip2::MultiOrderApi do
   let(:multi_order_api) { described_class.new(sandbox_client) }
 

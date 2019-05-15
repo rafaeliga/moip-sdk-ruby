@@ -1,3 +1,4 @@
+#encoding: utf-8
 describe Moip2::AccountsApi do
   let(:accounts_api) { described_class.new sandbox_oauth_client }
 

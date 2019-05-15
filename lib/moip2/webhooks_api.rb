@@ -6,7 +6,12 @@ module Moip2
       @client = client
     end
 
-    def find_all(limit: nil, offset: nil, resource_id: nil, event: nil)
+    def find_all(options={})
+      limit = options[:limit]
+      offset = options[:offset]
+      resource_id = options[:resource_id]
+      event = options[:event]
+
       # `URI.encode...` will accept nil params, but they will pollute the URI
       params = {
         limit: limit,

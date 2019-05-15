@@ -6,7 +6,10 @@ module Moip2
       @client = client
     end
 
-    def base_path(app_id: nil, notification_id: nil)
+    def base_path(options={})
+      app_id = options[:app_id]
+      notification_id = options[:notification_id]
+
       ["", "v2", "preferences", app_id, "notifications", notification_id].compact.join("/")
     end
 

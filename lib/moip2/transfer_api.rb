@@ -14,7 +14,12 @@ module Moip2
       Resource::Transfer.new client.get("#{base_path}/#{transfers_id}")
     end
 
-    def find_all(limit: nil, offset: nil, filters: nil, status: nil)
+    def find_all(options={})
+      limit = options[:limit]
+      offset = options[:offset]
+      filters = options[:filters]
+      status = options[:status]
+
       response = client.get(uri_encode(limit, offset, filters, status))
       Resource::Transfer.new json_to_object(response)
     end

@@ -16,7 +16,7 @@ module Moip2
 
       def self.extract_rules(field, rules)
         rules.map do |type, value|
-          return unless %i[gt ge lt le bt in].include?(type)
+          return unless [:gt, :ge, :lt, :le, :bt, :in].include?(type)
 
           content = value.is_a?(Array) ? value.join(",") : value
 

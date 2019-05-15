@@ -18,7 +18,12 @@ module Moip2
       Resource::Order.new client, client.get("#{base_path}/#{id}")
     end
 
-    def find_all(limit: nil, offset: nil, q: nil, filters: nil)
+    def find_all(options={})
+      limit = options[:limit]
+      offset = options[:offset]
+      q = options[:q]
+      filters = options[:filters]
+
       encoded_filters = Moip2::Util::FiltersEncoder.encode(filters)
 
       # `URI.encode...` will accept nil params, but they will pollute the URI

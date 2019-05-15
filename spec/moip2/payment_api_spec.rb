@@ -1,3 +1,4 @@
+#encoding: utf-8
 describe Moip2::PaymentApi do
   let(:payment_api) { described_class.new(sandbox_client) }
 

@@ -26,7 +26,14 @@ module Moip2
       find_all(begin_date: begin_date, end_date: end_date)
     end
 
-    def find_all(email: nil, begin_date: nil, end_date: nil, limit: 20, offset: 0, q: nil, filters: nil)
+    def find_all(options={})
+      email = options[:email]
+      begin_date = options[:begin_date]
+      end_date = options[:end_date]
+      limit = options[:limit] || 20
+      offset = options[:offset] || 0
+      q = options[:q]
+      filters = options[:filters]
 
       encoded_filters = Moip2::Util::FiltersEncoder.encode(filters)
 
