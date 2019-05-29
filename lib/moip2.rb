@@ -53,7 +53,7 @@ require "moip2/util/filters_encoder"
 
 module Moip2
   class << self
-    VALID_ENVS = [:sandbox, :production].freeze
+    VALID_ENVS = [:sandbox, :production]
 
     def env=(env)
       raise InvalidEnviromentError unless VALID_ENVS.include?(env.to_sym)
