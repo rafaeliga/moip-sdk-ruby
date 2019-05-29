@@ -18,6 +18,10 @@ module Moip2
       Resource::Customer.new client, client.get("#{base_path}/#{customer_external_id}")
     end
 
+    def find_all(limit)
+      Resource::Customer.new client, client.get("#{base_path}?limit=#{limit}")
+    end
+
     def create(customer)
       Resource::Customer.new client, client.post(base_path, customer)
     end
